@@ -50,7 +50,7 @@ def load_model():
         )
         return bce + (1 - dice_coef(yt, yp))
 
-    model_path = "best_model.keras"
+    model_path = os.path.join(os.path.dirname(__file__), "best_model.keras")
     if not os.path.exists(model_path):
         st.error(f"Model not found at {model_path}. Ensure best_model.keras is in the app directory.")
         st.stop()
